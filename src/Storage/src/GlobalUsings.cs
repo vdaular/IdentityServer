@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -11,9 +13,9 @@
 */
 
 global using IdentityModel;
-global using IdentityServer8.Extensions;
-global using IdentityServer8.Models;
-global using IdentityServer8.Stores;
+global using IdentityServer9.Extensions;
+global using IdentityServer9.Models;
+global using IdentityServer9.Stores;
 global using Newtonsoft.Json;
 global using Newtonsoft.Json.Serialization;
 global using System.Collections;

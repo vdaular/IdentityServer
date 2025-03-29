@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,15 +12,15 @@
  copies or substantial portions of the Software.
 */
 
-using IdentityServer8.EntityFramework.Entities;
+using IdentityServer9.EntityFramework.Entities;
 
-namespace IdentityServer8.EntityFramework.DbContexts
+namespace IdentityServer9.EntityFramework.DbContexts
 {
     /// <summary>
     /// DbContext for the IdentityServer configuration data.
     /// </summary>
     /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
-    /// <seealso cref="IdentityServer8.EntityFramework.Interfaces.IConfigurationDbContext" />
+    /// <seealso cref="IdentityServer9.EntityFramework.Interfaces.IConfigurationDbContext" />
     public class ConfigurationDbContext : ConfigurationDbContext<ConfigurationDbContext>
     {
         /// <summary>
@@ -37,7 +39,7 @@ namespace IdentityServer8.EntityFramework.DbContexts
     /// DbContext for the IdentityServer configuration data.
     /// </summary>
     /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
-    /// <seealso cref="IdentityServer8.EntityFramework.Interfaces.IConfigurationDbContext" />
+    /// <seealso cref="IdentityServer9.EntityFramework.Interfaces.IConfigurationDbContext" />
     public class ConfigurationDbContext<TContext> : DbContext, IConfigurationDbContext
         where TContext : DbContext, IConfigurationDbContext
     {

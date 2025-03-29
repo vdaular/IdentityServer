@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -15,7 +17,7 @@ using Microsoft.Extensions.Configuration;
 using System.Runtime.InteropServices;
 using Xunit;
 
-namespace IdentityServer8.EntityFramework.IntegrationTests;
+namespace IdentityServer9.EntityFramework.IntegrationTests;
 
 /// <summary>
 /// Base class for integration tests, responsible for initializing test database providers & an xUnit class fixture
@@ -60,7 +62,13 @@ public class IntegrationTest<TClass, TDbContext, TStoreOption> : IClassFixture<D
 
     protected IntegrationTest(DatabaseProviderFixture<TDbContext> fixture)
     {
-        fixture.Options = TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<TDbContext>)y)).ToList();
+        var optionsList = new List<DbContextOptions<TDbContext>>();
+        foreach (var provider in TestDatabaseProviders)
+        {
+            optionsList.Add((DbContextOptions<TDbContext>) provider);
+        }
+        fixture.Options = optionsList;
         fixture.StoreOptions = StoreOptions;
     }
+
 }

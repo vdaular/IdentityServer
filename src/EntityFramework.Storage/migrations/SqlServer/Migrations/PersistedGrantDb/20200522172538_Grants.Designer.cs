@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -26,7 +28,7 @@ namespace SqlServer.Migrations.PersistedGrantDb
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("IdentityServer8.EntityFramework.Entities.DeviceFlowCodes", b =>
+            modelBuilder.Entity("IdentityServer9.EntityFramework.Entities.DeviceFlowCodes", b =>
                 {
                     b.Property<string>("UserCode")
                         .HasColumnType("nvarchar(200)")
@@ -76,7 +78,7 @@ namespace SqlServer.Migrations.PersistedGrantDb
                     b.ToTable("DeviceCodes");
                 });
 
-            modelBuilder.Entity("IdentityServer8.EntityFramework.Entities.PersistedGrant", b =>
+            modelBuilder.Entity("IdentityServer9.EntityFramework.Entities.PersistedGrant", b =>
                 {
                     b.Property<string>("Key")
                         .HasColumnType("nvarchar(200)")

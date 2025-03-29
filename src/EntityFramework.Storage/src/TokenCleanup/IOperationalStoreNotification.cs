@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,9 +12,9 @@
  copies or substantial portions of the Software.
 */
 
-using IdentityServer8.EntityFramework.Entities;
+using IdentityServer9.EntityFramework.Entities;
 
-namespace IdentityServer8.EntityFramework
+namespace IdentityServer9.EntityFramework
 {
     /// <summary>
     /// Interface to model notifications from the TokenCleanup feature.

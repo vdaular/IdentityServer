@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -16,7 +18,7 @@ public class Program
 {
     public static int Main(string[] args)
     {
-        Console.Title = "IdentityServer8.AspNetIdentity";
+        Console.Title = "IdentityServer9.AspNetIdentity";
         Activity.DefaultIdFormat = ActivityIdFormat.W3C;
 
         Log.Logger = new LoggerConfiguration()
@@ -26,7 +28,7 @@ public class Program
             .MinimumLevel.Override("System", LogEventLevel.Warning)
             .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
             .Enrich.FromLogContext()
-            //.WriteTo.File(@"IdentityServer8_log.txt")
+            //.WriteTo.File(@"IdentityServer9_log.txt")
             // uncomment to write to Azure diagnostics stream
             //.WriteTo.File(
             //    @"D:\home\LogFiles\Application\identityserver.txt",

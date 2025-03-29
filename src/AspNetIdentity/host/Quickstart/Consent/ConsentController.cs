@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -115,7 +117,7 @@ public class ConsentController : Controller
                 var scopes = model.ScopesConsented;
                 if (ConsentOptions.EnableOfflineAccess == false)
                 {
-                    scopes = scopes.Where(x => x != IdentityServer8.IdentityServerConstants.StandardScopes.OfflineAccess);
+                    scopes = scopes.Where(x => x != IdentityServer9.IdentityServerConstants.StandardScopes.OfflineAccess);
                 }
 
                 grantedConsent = new ConsentResponse
@@ -203,7 +205,7 @@ public class ConsentController : Controller
         }
         if (ConsentOptions.EnableOfflineAccess && request.ValidatedResources.Resources.OfflineAccess)
         {
-            apiScopes.Add(GetOfflineAccessScope(vm.ScopesConsented.Contains(IdentityServer8.IdentityServerConstants.StandardScopes.OfflineAccess) || model == null));
+            apiScopes.Add(GetOfflineAccessScope(vm.ScopesConsented.Contains(IdentityServer9.IdentityServerConstants.StandardScopes.OfflineAccess) || model == null));
         }
         vm.ApiScopes = apiScopes;
 
@@ -246,7 +248,7 @@ public class ConsentController : Controller
     {
         return new ScopeViewModel
         {
-            Value = IdentityServer8.IdentityServerConstants.StandardScopes.OfflineAccess,
+            Value = IdentityServer9.IdentityServerConstants.StandardScopes.OfflineAccess,
             DisplayName = ConsentOptions.OfflineAccessDisplayName,
             Description = ConsentOptions.OfflineAccessDescription,
             Emphasize = true,

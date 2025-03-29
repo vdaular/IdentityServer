@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,7 +12,7 @@
  copies or substantial portions of the Software.
 */
 
-namespace IdentityServer8.EntityFramework.Options
+namespace IdentityServer9.EntityFramework.Options
 {
     /// <summary>
     /// Options for configuring the operational context.

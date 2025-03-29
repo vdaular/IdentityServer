@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,13 +12,13 @@
  copies or substantial portions of the Software.
 */
 
-namespace IdentityServer8.AspNetIdentity;
+namespace IdentityServer9.AspNetIdentity;
 
 /// <summary>
 /// IProfileService to integrate with ASP.NET Identity.
 /// </summary>
 /// <typeparam name="TUser">The type of the user.</typeparam>
-/// <seealso cref="IdentityServer8.Services.IProfileService" />
+/// <seealso cref="IdentityServer9.Services.IProfileService" />
 public class ProfileService<TUser> : IProfileService
     where TUser : class
 {

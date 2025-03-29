@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,7 +12,7 @@
  copies or substantial portions of the Software.
 */
 
-Console.Title = "IdentityServer8";
+Console.Title = "IdentityServer9";
 
 var app = CreateWebHostBuilder(args);
 await app.RunAsync();
@@ -58,7 +60,7 @@ WebApplication CreateWebHostBuilder(string[] args)
                options.KeyRetirement = options.KeyActivationDelay * 3;
 
                // You can get your own license from:
-               // https://www.identityserver8.com/products/KeyManagement
+               // https://www.IdentityServer9.com/products/KeyManagement
                options.Licensee = "your licensee";
                options.License = "your license key";
            })

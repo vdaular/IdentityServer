@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -34,7 +36,7 @@ try
              options.Events.RaiseFailureEvents = true;
              options.Events.RaiseSuccessEvents = true;
 
-             // see https://IdentityServer8.readthedocs.io/en/latest/topics/resources.html
+             // see https://IdentityServer9.readthedocs.io/en/latest/topics/resources.html
              options.EmitStaticAudienceClaim = true;
          })
          .AddInMemoryIdentityResources(Config.IdentityResources)

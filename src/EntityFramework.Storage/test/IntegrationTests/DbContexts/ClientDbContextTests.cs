@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,25 +12,28 @@
  copies or substantial portions of the Software.
 */
 
-using IdentityServer8.EntityFramework.DbContexts;
+using IdentityServer9.EntityFramework.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using IdentityServer8.EntityFramework.Entities;
-using IdentityServer8.EntityFramework.Options;
+using IdentityServer9.EntityFramework.Entities;
+using IdentityServer9.EntityFramework.Options;
 using Xunit;
 
-namespace IdentityServer8.EntityFramework.IntegrationTests.DbContexts;
+namespace IdentityServer9.EntityFramework.IntegrationTests.DbContexts;
 
 public class ClientDbContextTests : IntegrationTest<ClientDbContextTests, ConfigurationDbContext, ConfigurationStoreOptions>
 {
     public ClientDbContextTests(DatabaseProviderFixture<ConfigurationDbContext> fixture) : base(fixture)
     {
-        foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<ConfigurationDbContext>)y)).ToList())
+        foreach (var provider in TestDatabaseProviders)
         {
-            using (var context = new ConfigurationDbContext(options, StoreOptions))
+            using (var context = new ConfigurationDbContext((DbContextOptions<ConfigurationDbContext>) provider, StoreOptions))
+            {
                 context.Database.EnsureCreated();
+            }
         }
     }
+
 
     [Theory, MemberData(nameof(TestDatabaseProviders))]
     public void CanAddAndDeleteClientScopes(DbContextOptions<ConfigurationDbContext> options)

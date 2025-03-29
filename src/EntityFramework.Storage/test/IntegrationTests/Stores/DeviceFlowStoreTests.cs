@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -12,18 +14,18 @@
 
 using FluentAssertions;
 using IdentityModel;
-using IdentityServer8.EntityFramework.DbContexts;
-using IdentityServer8.EntityFramework.Entities;
-using IdentityServer8.EntityFramework.Options;
-using IdentityServer8.EntityFramework.Stores;
-using IdentityServer8.Models;
-using IdentityServer8.Stores.Serialization;
+using IdentityServer9.EntityFramework.DbContexts;
+using IdentityServer9.EntityFramework.Entities;
+using IdentityServer9.EntityFramework.Options;
+using IdentityServer9.EntityFramework.Stores;
+using IdentityServer9.Models;
+using IdentityServer9.Stores.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory.Infrastructure.Internal;
 using System.Security.Claims;
 using Xunit;
 
-namespace IdentityServer8.EntityFramework.IntegrationTests.Stores;
+namespace IdentityServer9.EntityFramework.IntegrationTests.Stores;
 
 public class DeviceFlowStoreTests : IntegrationTest<DeviceFlowStoreTests, PersistedGrantDbContext, OperationalStoreOptions>
 {
@@ -31,10 +33,12 @@ public class DeviceFlowStoreTests : IntegrationTest<DeviceFlowStoreTests, Persis
 
     public DeviceFlowStoreTests(DatabaseProviderFixture<PersistedGrantDbContext> fixture) : base(fixture)
     {
-        foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
+        foreach (var provider in TestDatabaseProviders)
         {
-            using (var context = new PersistedGrantDbContext(options, StoreOptions))
+            using (var context = new PersistedGrantDbContext((DbContextOptions<PersistedGrantDbContext>) provider, StoreOptions))
+            {
                 context.Database.EnsureCreated();
+            }
         }
     }
 

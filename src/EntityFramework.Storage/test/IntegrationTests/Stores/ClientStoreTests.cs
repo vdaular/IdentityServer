@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -11,29 +13,30 @@
 */
 
 using FluentAssertions;
-using IdentityServer8.EntityFramework.DbContexts;
-using IdentityServer8.EntityFramework.Mappers;
-using IdentityServer8.EntityFramework.Options;
-using IdentityServer8.EntityFramework.Stores;
-using IdentityServer8.Models;
+using IdentityServer9.EntityFramework.DbContexts;
+using IdentityServer9.EntityFramework.Mappers;
+using IdentityServer9.EntityFramework.Options;
+using IdentityServer9.EntityFramework.Stores;
+using IdentityServer9.Models;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 using Xunit.Sdk;
 
-namespace IdentityServer8.EntityFramework.IntegrationTests.Stores;
+namespace IdentityServer9.EntityFramework.IntegrationTests.Stores;
 
 public class ClientStoreTests : IntegrationTest<ClientStoreTests, ConfigurationDbContext, ConfigurationStoreOptions>
 {
     public ClientStoreTests(DatabaseProviderFixture<ConfigurationDbContext> fixture) : base(fixture)
     {
-        foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<ConfigurationDbContext>) y)).ToList())
+        foreach (var provider in TestDatabaseProviders)
         {
-            using (var context = new ConfigurationDbContext(options, StoreOptions))
+            using (var context = new ConfigurationDbContext((DbContextOptions<ConfigurationDbContext>) provider, StoreOptions))
             {
                 context.Database.EnsureCreated();
             }
         }
     }
+
 
     [Theory, MemberData(nameof(TestDatabaseProviders))]
     public async Task FindClientByIdAsync_WhenClientDoesNotExist_ExpectNull(DbContextOptions<ConfigurationDbContext> options)

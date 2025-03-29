@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,9 +12,9 @@
  copies or substantial portions of the Software.
 */
 
-using IdentityServer8.Models;
+using IdentityServer9.Models;
 
-namespace IdentityServer8.EntityFramework.Mappers
+namespace IdentityServer9.EntityFramework.Mappers
 {
     /// <summary>
     /// Defines entity/model mapping for clients.

@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,14 +12,14 @@
  copies or substantial portions of the Software.
 */
 
-using IdentityServer8.Models;
+using IdentityServer9.Models;
 
-namespace IdentityServer8.EntityFramework.Stores
+namespace IdentityServer9.EntityFramework.Stores
 {
     /// <summary>
     /// Implementation of IClientStore thats uses EF.
     /// </summary>
-    /// <seealso cref="IdentityServer8.Stores.IClientStore" />
+    /// <seealso cref="IdentityServer9.Stores.IClientStore" />
     public class ClientStore : IClientStore
     {
         /// <summary>

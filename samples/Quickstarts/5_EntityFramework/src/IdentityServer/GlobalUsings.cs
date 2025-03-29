@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -11,17 +13,17 @@
 */
 
 global using IdentityModel;
-global using IdentityServer8;
-global using IdentityServer8.Configuration;
-global using IdentityServer8.EntityFramework.DbContexts;
-global using IdentityServer8.EntityFramework.Mappers;
-global using IdentityServer8.Events;
-global using IdentityServer8.Extensions;
-global using IdentityServer8.Models;
-global using IdentityServer8.Services;
-global using IdentityServer8.Stores;
-global using IdentityServer8.Test;
-global using IdentityServer8.Validation;
+global using IdentityServer9;
+global using IdentityServer9.Configuration;
+global using IdentityServer9.EntityFramework.DbContexts;
+global using IdentityServer9.EntityFramework.Mappers;
+global using IdentityServer9.Events;
+global using IdentityServer9.Extensions;
+global using IdentityServer9.Models;
+global using IdentityServer9.Services;
+global using IdentityServer9.Stores;
+global using IdentityServer9.Test;
+global using IdentityServer9.Validation;
 global using IdentityServerHost.Quickstart.UI;
 global using Microsoft.AspNetCore.Authentication;
 global using Microsoft.AspNetCore.Authorization;
@@ -42,4 +44,4 @@ global using System.Security.Claims;
 global using System.Text;
 global using System.Text.Json;
 global using static IdentityModel.JwtClaimTypes;
-global using IdentityServerClaimValueTypes = IdentityServer8.IdentityServerConstants.ClaimValueTypes;
+global using IdentityServerClaimValueTypes = IdentityServer9.IdentityServerConstants.ClaimValueTypes;

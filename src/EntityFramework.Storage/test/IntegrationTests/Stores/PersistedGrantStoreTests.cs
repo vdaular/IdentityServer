@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -11,27 +13,31 @@
 */
 
 using FluentAssertions;
-using IdentityServer8.EntityFramework.DbContexts;
-using IdentityServer8.EntityFramework.Mappers;
-using IdentityServer8.EntityFramework.Options;
-using IdentityServer8.EntityFramework.Stores;
-using IdentityServer8.Models;
-using IdentityServer8.Stores;
+using IdentityServer9.EntityFramework.DbContexts;
+using IdentityServer9.EntityFramework.Mappers;
+using IdentityServer9.EntityFramework.Options;
+using IdentityServer9.EntityFramework.Stores;
+using IdentityServer9.Models;
+using IdentityServer9.Stores;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace IdentityServer8.EntityFramework.IntegrationTests.Stores;
+namespace IdentityServer9.EntityFramework.IntegrationTests.Stores;
 
 public class PersistedGrantStoreTests : IntegrationTest<PersistedGrantStoreTests, PersistedGrantDbContext, OperationalStoreOptions>
 {
     public PersistedGrantStoreTests(DatabaseProviderFixture<PersistedGrantDbContext> fixture) : base(fixture)
     {
-        foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
+        foreach (var provider in TestDatabaseProviders)
         {
-            using (var context = new PersistedGrantDbContext(options, StoreOptions))
+            using (var context = new PersistedGrantDbContext((DbContextOptions<PersistedGrantDbContext>) provider, StoreOptions))
+            {
                 context.Database.EnsureCreated();
+            }
         }
     }
+
+
 
     private static PersistedGrant CreateTestObject(string sub = null, string clientId = null, string sid = null, string type = null)
     {

@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -10,12 +12,12 @@
  copies or substantial portions of the Software.
 */
 
-namespace IdentityServer8.EntityFramework.Services;
+namespace IdentityServer9.EntityFramework.Services;
 
 /// <summary>
 /// Implementation of ICorsPolicyService that consults the client configuration in the database for allowed CORS origins.
 /// </summary>
-/// <seealso cref="IdentityServer8.Services.ICorsPolicyService" />
+/// <seealso cref="IdentityServer9.Services.ICorsPolicyService" />
 public class CorsPolicyService : ICorsPolicyService
 {
     private readonly IHttpContextAccessor _context;

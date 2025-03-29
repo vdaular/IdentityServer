@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -11,9 +13,9 @@
 */
 
 using IdentityModel;
-using IdentityServer8.Models;
+using IdentityServer9.Models;
 using System.Collections.Generic;
-using static IdentityServer8.IdentityServerConstants;
+using static IdentityServer9.IdentityServerConstants;
 
 namespace IdentityServerHost.Configuration;
 

@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -11,18 +13,18 @@
 */
 
 using FluentAssertions;
-using IdentityServer8.EntityFramework.DbContexts;
-using IdentityServer8.EntityFramework.Entities;
-using IdentityServer8.EntityFramework.Interfaces;
-using IdentityServer8.EntityFramework.Options;
-using IdentityServer8.EntityFramework.Stores;
-using IdentityServer8.Stores;
-using IdentityServer8.Test;
+using IdentityServer9.EntityFramework.DbContexts;
+using IdentityServer9.EntityFramework.Entities;
+using IdentityServer9.EntityFramework.Interfaces;
+using IdentityServer9.EntityFramework.Options;
+using IdentityServer9.EntityFramework.Stores;
+using IdentityServer9.Stores;
+using IdentityServer9.Test;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace IdentityServer8.EntityFramework.IntegrationTests.TokenCleanup;
+namespace IdentityServer9.EntityFramework.IntegrationTests.TokenCleanup;
 
 public class TokenCleanupTests : IntegrationTest<TokenCleanupTests, PersistedGrantDbContext, OperationalStoreOptions>
 {
@@ -30,14 +32,16 @@ public class TokenCleanupTests : IntegrationTest<TokenCleanupTests, PersistedGra
 
     public TokenCleanupTests(DatabaseProviderFixture<PersistedGrantDbContext> fixture) : base(fixture)
     {
-        foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
+        foreach (var provider in TestDatabaseProviders)
         {
-            using (var context = new PersistedGrantDbContext(options, StoreOptions))
+            using (var context = new PersistedGrantDbContext((DbContextOptions<PersistedGrantDbContext>) provider, StoreOptions))
             {
                 context.Database.EnsureCreated();
             }
         }
     }
+
+
 
     [Theory, MemberData(nameof(TestDatabaseProviders))]
     public async Task RemoveExpiredGrantsAsync_WhenExpiredGrantsExist_ExpectExpiredGrantsRemoved(DbContextOptions<PersistedGrantDbContext> options)

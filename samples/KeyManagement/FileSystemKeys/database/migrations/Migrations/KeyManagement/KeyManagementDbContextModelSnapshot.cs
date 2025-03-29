@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
+ Copyright (c) 2025 Victor Daniel Aular - https://github.com/vdaular/
+
+Copyright (c) 2024 HigginsSoft, Alexander Higgins - https://github.com/alexhiggins732/ 
 
  Copyright (c) 2018, Brock Allen & Dominick Baier. All rights reserved.
 
@@ -23,7 +25,7 @@ partial class KeyManagementDbContextModelSnapshot : ModelSnapshot
             .HasAnnotation("Relational:MaxIdentifierLength", 128)
             .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-        modelBuilder.Entity("IdentityServer8.KeyManagement.EntityFramework.DataProtectionKey", b =>
+        modelBuilder.Entity("IdentityServer9.KeyManagement.EntityFramework.DataProtectionKey", b =>
             {
                 b.Property<int>("Id")
                     .ValueGeneratedOnAdd()
@@ -50,7 +52,7 @@ partial class KeyManagementDbContextModelSnapshot : ModelSnapshot
                 b.ToTable("DataProtectionKeys");
             });
 
-        modelBuilder.Entity("IdentityServer8.KeyManagement.EntityFramework.SigningKey", b =>
+        modelBuilder.Entity("IdentityServer9.KeyManagement.EntityFramework.SigningKey", b =>
             {
                 b.Property<int>("Id")
                     .ValueGeneratedOnAdd()
